@@ -12,7 +12,7 @@ namespace TicTacToeSubmissionConole
 
         public TicTacToe()
         {
-            _boardRenderer = new TicTacToeConsoleRenderer(10,6);
+            _boardRenderer = new TicTacToeConsoleRenderer(10, 6);
             _boardRenderer.Render();
         }
 
@@ -22,52 +22,142 @@ namespace TicTacToeSubmissionConole
 
 
         {
-            
 
-
+            char[] player1 = new char[9];
+            char[] player2 = new char[9];
 
             // FOR ILLUSTRATION CHANGE TO YOUR OWN LOGIC TO DO TIC TAC TOE
 
-            Console.SetCursorPosition(2, 19);
+            for (int index = 0; index < player1.Length; index++)
+            {
+                if (index == 0 || index % 2 == 0) ;
+                {
+                    Console.SetCursorPosition(2, 18);
+                    Console.Write("Player 1");
 
-            Console.Write("Player 1");
+                    Console.SetCursorPosition(2, 20);
+                    Console.Write("Please Enter Row: ");
 
-            Console.SetCursorPosition(2, 20);
+                    var rowX = Console.ReadLine();
+                    Console.SetCursorPosition(2, 21);
+                    Console.Write("Please Enter Column: ");
+                    var columnX = Console.ReadLine();
 
-            Console.Write("Please Enter Row (0 to 2): ");
-            var rowX = Console.ReadLine();
+                    _boardRenderer.AddMove(int.Parse(rowX), int.Parse(columnX), PlayerEnum.X, true);
 
-            Console.SetCursorPosition(2, 22);
+                    /*     Console.SetCursorPosition(40, 18);
+                         Console.Write("Player Y");
 
+                         Console.SetCursorPosition(40, 20);
+                         Console.Write("Please enter Row:");
+                         var rowO = Console.ReadLine();
 
-            Console.Write("Please Enter Column(0 to 2): ");
-            var columnX = Console.ReadLine();
+                         Console.SetCursorPosition(40, 21);
+                         Console.Write("Please Enter Column: ");
+                         var columnO = Console.ReadLine();
 
-
-            _boardRenderer.AddMove(int.Parse(rowX), int.Parse(columnX), PlayerEnum.X, true);
-
-
-
-            //player2
-
-            Console.SetCursorPosition(32, 19);
-
-            Console.Write("Player 2");
-
-            Console.SetCursorPosition(32, 20);
-
-            Console.Write("Please Enter Row (0 to 2): ");
-            var rowY = Console.ReadLine();
-
-            Console.SetCursorPosition(32, 22);
+                         _boardRenderer.AddMove(int.Parse(rowO), int.Parse(columnO), PlayerEnum.O, true); */
 
 
-            Console.Write("Please Enter Column(0 to 2): ");
-            var columnY = Console.ReadLine();
+                        if (int.Parse(rowX) == 0 && int.Parse(columnX) == 0)
+                        {
+                            player1[0] = '0';
+                        }
+                        if (int.Parse(rowX) == 0 && int.Parse(columnX) == 1)
+                        {
+                            player1[1] = '0';
+                        }
+                        if (int.Parse(rowX) == 0 && int.Parse(columnX) == 2)
+                        {
+                            player1[2] = '0';
+                        }
+                        if (int.Parse(rowX) == 1 && int.Parse(columnX) == 0)
+                        {
+                            player1[3] = '0';
+                        }
+                        if (int.Parse(rowX) == 1 && int.Parse(columnX) == 1)
+                        {
+                            player1[4] = '0';
+                        }
+                        if (int.Parse(rowX) == 1 && int.Parse(columnX) == 2)
+                        {
+                            player1[5] = '0';
+                        }
+                        if (int.Parse(rowX) == 2 && int.Parse(columnX) == 0)
+                        {
+                            player1[6] = '0';
+                        }
+                        if (int.Parse(rowX) == 2 && int.Parse(columnX) == 1)
+                        {
+                            player1[7] = '0';
+                        }
+                        if (int.Parse(rowX) == 2 && int.Parse(columnX) == 2)
+                        {
+                            player1[8] = '0';
+                        }
+                    }
+                    if (index == 0 || index % 2 == 0) ;
+                    {
 
-            _boardRenderer.AddMove(int.Parse(rowY), int.Parse(columnY), PlayerEnum.O, true);
 
+                        Console.SetCursorPosition(40, 18);
+                        Console.Write("Player 2");
+
+                        Console.SetCursorPosition(40, 20);
+                        Console.Write("Please enter Row:");
+                        var rowO = Console.ReadLine();
+
+                        Console.SetCursorPosition(40, 21);
+                        Console.Write("Please Enter Column: ");
+                        var columnO = Console.ReadLine();
+
+                        _boardRenderer.AddMove(int.Parse(rowO), int.Parse(columnO), PlayerEnum.O, true);
+
+
+                            if (int.Parse(rowO) == 0 && int.Parse(columnO) == 0)
+                            {
+                                player1[0] = '0';
+                            }
+                            if (int.Parse(rowO) == 0 && int.Parse(columnO) == 1)
+                            {
+                                player1[1] = '0';
+                            }
+                            if (int.Parse(rowO) == 0 && int.Parse(columnO) == 2)
+                            {
+                                player1[2] = '0';
+                            }
+                            if (int.Parse(rowO) == 1 && int.Parse(columnO) == 0)
+                            {
+                                player1[3] = '0';
+                            }
+                            if (int.Parse(rowO) == 1 && int.Parse(columnO) == 1)
+                            {
+                                player1[4] = '0';
+                            }
+                            if (int.Parse(rowO) == 1 && int.Parse(columnO) == 2)
+                            {
+                                player1[5] = '0';
+                            }
+                            if (int.Parse(rowO) == 2 && int.Parse(columnO) == 0)
+                            {
+                                player1[6] = '0';
+                            }
+                            if (int.Parse(rowO) == 2 && int.Parse(columnO) == 1)
+                            {
+                                player1[7] = '0';
+                            }
+                            if (int.Parse(rowO) == 2 && int.Parse(columnO) == 2)
+                            {
+                                player1[8] = '0';
+                            }
+
+                    
+
+                        }
+
+                    }
+                }
+            }
         }
+    
 
-    }
-}
